@@ -7,16 +7,20 @@ data "aws_availability_zones" "available" {
   }
 }
 
+data "aws_caller_identity" "current" {
+  
+}
 
-# data "aws_eks_cluster" "cluster" {
-#   name     = var.cluster_name.manager
-# }
+
+data "aws_eks_cluster" "cluster" {
+  name     = var.cluster_name
+}
 
 # data "aws_eks_cluster" "cluster" {
 #   for_each = toset(data.aws_eks_clusters.clusters.names)
 #   name     = each.value
 # }
 
-# data aws_eks_cluster_auth "cluster" {
-#   name = var.cluster_name.manager
-# }
+data aws_eks_cluster_auth "cluster" {
+  name = var.cluster_name
+}

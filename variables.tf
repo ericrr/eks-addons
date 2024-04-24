@@ -26,7 +26,7 @@ variable "ami" {
 }
 
 variable "cluster_name" {
-  type = map(any)
+  type = string
   description = "cluster name"
 }
 
